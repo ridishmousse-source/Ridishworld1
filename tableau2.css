@@ -1,0 +1,19 @@
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+.vert {
+  color: green;
+}
+
+.rouge {
+  color: red;
+  font-weight: bold;
+}

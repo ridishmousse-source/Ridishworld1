@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌸 Tableau Stylé - Ridish</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+/* --- STYLE GLOBAL --- */
+body {
+  background: linear-gradient(135deg, #000000, #4B0082, #8B00FF, #C71585);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  font-family: 'Dancing Script', cursive;
+  color: #fff;
+  padding: 40px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Animation du fond dégradé */
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* --- TITRE --- */
+h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #ffb3ff;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* --- TABLEAU --- */
+table {
+  width: 340px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 22px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+  overflow: hidden;
+  margin-bottom: 40px;
+  animation: fadeInUp 2s ease both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol du tableau */
+table:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* --- CELLULES --- */
+th, td {
+  padding: 14px 18px;
+  text-align: center;
+  vertical-align: middle;
+  height: 55px;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* En-têtes */
+th {
+  background: linear-gradient(135deg, #a142eb, #be99fa);
+  color: white;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* --- RGL2 : texte rouge et gras --- */
+.rgl2-cell {
+  background-color: #fff;
+  color: #e74c3c;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* --- RGL3 : fond vert, texte blanc, penché --- */
+.rgl3-cell {
+  background-color: #27ae60;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.rgl3-text {
+  display: inline-block;
+  transform: rotate(-25deg);
+  transform-origin: center center;
+  line-height: 50px;
+  width: 100%;
+}
+
+/* --- Texte vertical pour RMS1 --- */
+.vertical-text {
+  display: inline-block;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  color: inherit;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- RMS3 fond vert, texte blanc --- */
+.rms3-cell {
+  background-color: #27ae60;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* --- Cellules fusionnées --- */
+td[colspan], td[rowspan] {
+  background-color: #fff;
+  color: #333;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+/* --- Effet au survol sur cellules normales --- */
+td:hover, th:hover {
+  background-color: rgba(255, 0, 150, 0.15);
+  color: #a142eb;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ffccff;
+  margin-top: 30px;
+  animation: fadeIn 3s ease;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 600px) {
+  body { padding: 20px; }
+  table { width: 100%; font-size: 18px; }
+  h2 { font-size: 30px; }
+}
+</style>
+</head>
+
+<body>
+  <h2>🌸 Tableau Élégant de Ridish 🌸</h2>
+
+  <table>
+    <tr>
+      <th>RMS1</th>
+      <th>RGL2</th>
+      <th>RGL3</th>
+      <th>RMS3</th>
+    </tr>
+    <tr>
+      <td><span class="vertical-text">Réseaux 1</span></td>
+      <td class="rgl2-cell">Texte Rouge</td>
+      <td class="rgl3-cell"><span class="rgl3-text">Texte Penché</span></td>
+      <td class="rms3-cell">Texte Vert</td>
+    </tr>
+    <tr>
+      <td colspan="4">Cellule Fusionnée Exemple</td>
+    </tr>
+  </table>
+
+  <footer>Créé avec 💜 par <strong>Ridish</strong> — 2025</footer>
+</body>
+</html>

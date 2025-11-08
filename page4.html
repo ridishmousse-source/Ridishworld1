@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌙 Listes & Positionnement - Ridish</title>
+
+  <!-- Polices élégantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- STYLE GLOBAL --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000, #4B0082, #800080);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      color: #f2f2f2;
+      padding: 40px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+      max-width: 900px;
+      margin: auto;
+      padding: 40px;
+      border: 2px solid rgba(204, 102, 255, 0.4);
+      animation: fadeInUp 1.5s ease both;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #e6ccff;
+      text-shadow: 1px 1px 4px #000;
+      margin-bottom: 25px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #e6ccff;
+      border-left: 5px solid #cc66ff;
+      padding-left: 10px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px #000;
+      animation: slideIn 1.2s ease both;
+    }
+
+    p {
+      margin: 15px 0;
+      text-align: justify;
+      color: #f0f0f0;
+      animation: fadeIn 1.2s ease both;
+    }
+
+    /* --- LISTES --- */
+    ul, ol, dl {
+      margin-left: 40px;
+      margin-bottom: 25px;
+      animation: listFadeIn 1.5s ease both;
+    }
+
+    li {
+      margin-bottom: 6px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    li:hover {
+      transform: translateX(8px);
+      color: #cc99ff;
+    }
+
+    dt {
+      font-weight: bold;
+      color: #cc99ff;
+    }
+
+    dd {
+      margin-bottom: 10px;
+      color: #f8f8f8;
+    }
+
+    em {
+      background-color: rgba(255, 255, 0, 0.4);
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    strong {
+      color: #ff4d4d;
+    }
+
+    /* --- TYPES DE LISTES --- */
+    ul.cercle { list-style-type: circle; }
+    ul.carre { list-style-type: square; }
+    ul.rien { list-style-type: none; }
+
+    ol.commence_a_zero { list-style-type: decimal-leading-zero; }
+    ol.lettres_minuscules { list-style-type: lower-alpha; }
+    ol.chiffres_romains { list-style-type: upper-roman; }
+    ol.lettres_grecques { list-style-type: lower-greek; }
+
+    /* --- EXEMPLES AVEC BORDURES --- */
+    .exemple p {
+      width: 300px;
+      border: 1px solid #cc99ff;
+      padding: 12px;
+      margin: 20px auto;
+      text-align: justify;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 10px rgba(204, 102, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .exemple p:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- POSITIONNEMENTS --- */
+    .zone {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background: rgba(255, 247, 178, 0.1);
+      margin: 40px auto;
+      border-radius: 10px;
+      border: 2px solid #ffcc80;
+      backdrop-filter: blur(3px);
+      animation: fadeInUp 1.5s ease both;
+    }
+
+    p#premier, p#second {
+      color: #000;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    p#premier {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      background: #ffb366;
+      padding: 5px;
+      border-radius: 5px;
+      animation: float 3s ease-in-out infinite alternate;
+    }
+
+    p#second {
+      position: absolute;
+      top: 60px;
+      left: 120px;
+      width: 150px;
+      background: #66cc99;
+      padding: 5px;
+      border-radius: 5px;
+      animation: float 3s ease-in-out infinite alternate-reverse;
+    }
+
+    /* --- FLOTTANTS --- */
+    .float-container {
+      width: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #cc99ff;
+      padding: 10px;
+      margin: 40px auto;
+      border-radius: 10px;
+      animation: fadeInUp 1.5s ease both;
+    }
+
+    .float-container p {
+      float: left;
+      width: 120px;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    p.float1 { background: #999; color: #000; }
+    p.float2 { background: #8fd3f4; color: #000; }
+
+    .float-container p:hover {
+      transform: scale(1.1);
+    }
+
+    .separation {
+      clear: both;
+      border: 1px solid #cc99ff;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #d6b3ff;
+      margin-top: 50px;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 10px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    /* --- ANIMATIONS --- */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateX(-30px);}
+      to {opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes listFadeIn {
+      from {opacity: 0; transform: translateY(15px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 25px; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🌸 Mes Expérimentations HTML & CSS</h1>
+
+    <h2>🍓 Listes simples</h2>
+    <ul>
+      <li>Fraises</li>
+      <li>Framboises</li>
+      <li>Cerises</li>
+    </ul>
+
+    <ol>
+      <li>Je me lève</li>
+      <li>Je mange et je bois</li>
+      <li>Je retourne me coucher</li>
+    </ol>
+
+    <dl>
+      <dt>Chat</dt>
+      <dd>Animal à 4 pattes qui fait "Miaou !"</dd>
+      <dt>Chien</dt>
+      <dd>Animal à 4 pattes qui fait "Ouaf Ouaf !"</dd>
+      <dt>Prof de maths</dt>
+      <dd>Personne qui enseigne des choses que personne ne comprend 😅</dd>
+    </dl>
+
+    <h2>📝 Exemples stylisés</h2>
+    <div class="exemple">
+      <p>Voici un paragraphe encadré pour montrer un exemple de style.</p>
+      <p><em>Les mots importants</em> peuvent être surlignés et <strong>ceux très importants</strong> en rouge.</p>
+    </div>
+
+    <h2>📐 Positionnement absolu</h2>
+    <div class="zone">
+      <p id="premier">Premier bloc</p>
+      <p id="second">Second bloc</p>
+    </div>
+
+    <h2>🧩 Positionnement flottant</h2>
+    <div class="float-container">
+      <p class="float1">Bloc flottant 1</p>
+      <p class="float2">Bloc flottant 2</p>
+      <div class="separation"></div>
+    </div>
+
+    <footer>
+      Créé avec 💜 par <strong>Ridish</strong> — 2025
+    </footer>
+  </div>
+</body>
+</html>
